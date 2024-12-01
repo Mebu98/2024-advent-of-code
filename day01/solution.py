@@ -19,3 +19,14 @@ for i in range(0, len(arr1)):
     sumDistance += distance
 
 print(f'Distance: {sumDistance}')
+
+## Calculate similarity score
+simScore = 0
+for i in range(0, len(arr1)):
+    num = int(arr1[i])
+    count = 0
+    for j in range(0, len(arr2)):
+        if num == int(arr2[j]): count += 1
+    simScore += num * count
+
+print(f'Similarity score: {simScore}')
