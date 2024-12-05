@@ -9,7 +9,7 @@ for i, row in enumerate(puzzleRows):
 for row in puzzleRows:
     startJump = (int(row[1]) - int(row[0]))
     maxJump = 3
-    safe, isAscending = True, True
+    isSafe, isAscending = True, True
     if 0 > startJump: isAscending = False
 
     for i in range(1, len(row)):
@@ -19,14 +19,14 @@ for row in puzzleRows:
         if 0 > currJump: currIsAscending = False
 
         if currJump == 0 or isAscending != currIsAscending:
-            safe = False
+            isSafe = False
             break
 
         if abs(curr - prev) > maxJump:
-            safe = False
+            isSafe = False
             break
 
-    if safe:
+    if isSafe:
         answer += 1
 
 print(answer)
