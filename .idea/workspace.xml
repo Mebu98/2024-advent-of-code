@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65949f8b-d1a2-4181-899a-17eda1813bad" name="Changes" comment="day02 part 02 finally works :)">
+    <list default="true" id="65949f8b-d1a2-4181-899a-17eda1813bad" name="Changes" comment="refactor day02-02 to satisfy PEP 8 conventions">
       <change afterPath="$PROJECT_DIR$/day03/input.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/day03/sol1.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/day03/sol2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day02/solution2.py" beforeDir="false" afterPath="$PROJECT_DIR$/day02/solution2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +50,7 @@
   "keyToString": {
     "Python.helloWorld.executor": "Run",
     "Python.sol1.executor": "Run",
+    "Python.sol2.executor": "Run",
     "Python.solution (1).executor": "Run",
     "Python.solution (2).executor": "Run",
     "Python.solution.executor": "Run",
@@ -73,7 +73,7 @@
       <recent name="C:\Users\merij\PycharmProjects\2024-advent-of-code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.sol1">
+  <component name="RunManager" selected="Python.sol2">
     <configuration name="sol1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="2024-advent-of-code" />
       <option name="ENV_FILES" value="" />
@@ -96,7 +96,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="solution (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="sol2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="2024-advent-of-code" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -105,11 +105,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day01" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day03" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day01/solution.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day03/sol2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -186,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.sol2" />
         <item itemvalue="Python.sol1" />
         <item itemvalue="Python.solution2" />
         <item itemvalue="Python.solution1 (1)" />
         <item itemvalue="Python.solution1" />
-        <item itemvalue="Python.solution (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733428199436</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactor day02-02 to satisfy PEP 8 conventions">
+      <option name="closed" value="true" />
+      <created>1733502490036</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733502490036</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,6 +278,7 @@
     <MESSAGE value="day01 part 2 simScore" />
     <MESSAGE value="day02 part 01" />
     <MESSAGE value="day02 part 02 finally works :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="day02 part 02 finally works :)" />
+    <MESSAGE value="refactor day02-02 to satisfy PEP 8 conventions" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor day02-02 to satisfy PEP 8 conventions" />
   </component>
 </project>
