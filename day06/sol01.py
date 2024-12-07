@@ -139,11 +139,9 @@ def d06s01start():
     obstacles = find_obstacles(grid)
     steps = calc_steps(guard, obstacles, len(grid), len(grid[0]))
     unique_steps = []
-    # for step in steps:
-    #     if step not in unique_steps:
-    #         unique_steps.append(step)
-    #     else:
-    #         print(f'{step} is already in unique steps')
+    for step in steps:
+        if step not in unique_steps:
+            unique_steps.append(step)
 
     # for y in range (0, len(grid)):
     #     for x in range(0, len(grid[0])):
