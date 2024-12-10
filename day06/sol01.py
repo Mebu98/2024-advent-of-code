@@ -9,6 +9,12 @@ class Obstacle:
         self.x = x
         self.y = y
 
+class Step:
+    def __init__(self, x, y, direction):
+        self.x = x
+        self.y = y
+        self.direction = direction
+
 def read_puzzle():
     puzzle = open("puzzle.txt", "r").read()
     grid = puzzle.split("\n")
@@ -38,7 +44,7 @@ def find_obstacles(grid):
 def calc_steps(guard, obstacles, max_x, max_y):
     ## Guard has [X, Y, Direction(which can be ^, >, v, <)]
     ## Obstacles are all obstacle X and Y positions
-    steps = [[guard.x, guard.y]]
+    steps = [Step(guard.x, guard.y, "S")]
 
     while (0 < guard.x < max_x
            and 0 < guard.y < max_y):
@@ -51,25 +57,25 @@ def calc_steps(guard, obstacles, max_x, max_y):
             if guard.direction == "^":
                 print("Guard moving up out of bounds")
                 for i in range(guard.y, -1, -1):
-                    current_steps.append([guard.x, i])
+                    current_steps.append(Step(guard.x, i, guard.direction))
                     guard.y = max_y + 1
 
             elif guard.direction == ">":
                 print("Guard moving right out of bounds")
                 for i in range(guard.x, max_x):
-                    current_steps.append([i, guard.y])
+                    current_steps.append(Step(i, guard.y, guard.direction))
                     guard.x = max_x + 1
 
             elif guard.direction == "v":
                 print("Guard moving down out of bounds")
                 for i in range(guard.y, max_y):
-                    current_steps.append([guard.x, i])
+                    current_steps.append(Step(guard.x, i, guard.direction))
                     guard.y = -1
 
             elif guard.direction == "<":
                 print("Guard moving left out of bounds")
                 for i in range(guard.x, -1, -1):
-                    current_steps.append([i, guard.y])
+                    current_steps.append(Step(i, guard.y, guard.direction))
                     guard.x = -1
 
         ## Else we're walking to an obstacle on the X axis
@@ -77,12 +83,12 @@ def calc_steps(guard, obstacles, max_x, max_y):
             if closest_obstacle.y < guard.y:
                 print("Guard moving up")
                 for i in range(guard.y, closest_obstacle.y + 1, -1):
-                    current_steps.append([guard.x, i])
+                    current_steps.append(Step(guard.x, i, guard.direction))
                 guard = Guard(closest_obstacle.x, closest_obstacle.y + 1, ">")
             else:
                 print("Guard moving down")
                 for i in range(guard.y, closest_obstacle.y - 1):
-                    current_steps.append([guard.x, i])
+                    current_steps.append(Step(guard.x, i, guard.direction))
                 guard = Guard(closest_obstacle.x, closest_obstacle.y - 1, "<")
 
         ## Or on the Y axis
@@ -90,23 +96,18 @@ def calc_steps(guard, obstacles, max_x, max_y):
             if closest_obstacle.x < guard.x:
                 print("Guard moving left")
                 for i in range(guard.x, closest_obstacle.x + 1, -1):
-                    current_steps.append([i, guard.y])
+                    current_steps.append(Step(i, guard.y, guard.direction))
                 guard = Guard(closest_obstacle.x + 1, closest_obstacle.y, "^")
             else:
                 print("Guard moving right")
                 for i in range(guard.x, closest_obstacle.x - 1):
-                    current_steps.append([i, guard.y])
+                    current_steps.append(Step(i, guard.y, guard.direction))
                 guard = Guard(closest_obstacle.x - 1, closest_obstacle.y, "v")
 
-        print(f'{len(current_steps)} steps: {current_steps}')
 
         for step in current_steps:
             steps.append(step)
-
-    print(f'steps: {steps}')
-    print (len(steps))
     return steps
-
 
 def find_closest_obstacle(guard, obstacles):
     closest_obstacle = None
@@ -138,22 +139,32 @@ def d06s01start():
     guard = find_guard(grid)
     obstacles = find_obstacles(grid)
     steps = calc_steps(guard, obstacles, len(grid), len(grid[0]))
-    unique_steps = []
+    unique_steps = [steps[0]]
     for step in steps:
-        if step not in unique_steps:
-            unique_steps.append(step)
+        is_in = False
+        for unique_step in unique_steps:
+            if step.x == unique_step.x and step.y == unique_step.y: is_in = True
 
-    # for y in range (0, len(grid)):
-    #     for x in range(0, len(grid[0])):
-    #         for step in unique_steps:
-    #             if step[0] == x and step[1] == y:
-    #                 print(step)
-    #                 grid[y][x] = "X"
-    #
-    #         for obstacle in obstacles:
-    #             if obstacle.x == x and obstacle.y == y:
-    #                 grid[y][x] = "#"
-    #
-    # for row in grid:
-    #     print(row)
+        if is_in is False: unique_steps.append(step)
+
+    print(f'Unique coordinates touched: {len(unique_steps)}')
+
+    grid_string = ""
+
+    for y in range (0, len(grid)):
+        for x in range(0, len(grid[0])):
+            for step in unique_steps:
+                if step.x == x and step.y == y:
+                    grid[y][x] = step.direction
+
+            for obstacle in obstacles:
+                if obstacle.x == x and obstacle.y == y:
+                    grid[y][x] = "#"
+
+    for row in grid:
+        for letter in row:
+            grid_string += letter
+        grid_string += "\n"
+    print(grid_string)
+
     return len(unique_steps)

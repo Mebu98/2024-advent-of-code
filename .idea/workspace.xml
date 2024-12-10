@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65949f8b-d1a2-4181-899a-17eda1813bad" name="Changes" comment="Day 6 s01, somehow missing 2 &quot;steps&quot; for the correct answer?">
+    <list default="true" id="65949f8b-d1a2-4181-899a-17eda1813bad" name="Changes" comment="whoops, forgot to uncomment the unique step counter...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day06/puzzle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day06/puzzle.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/day06/sol01.py" beforeDir="false" afterPath="$PROJECT_DIR$/day06/sol01.py" afterDir="false" />
@@ -45,27 +45,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.__init__.executor": "Run",
-    "Python.__main__.executor": "Run",
-    "Python.helloWorld.executor": "Run",
-    "Python.sol1.executor": "Run",
-    "Python.sol2.executor": "Run",
-    "Python.solution (1).executor": "Run",
-    "Python.solution (2).executor": "Run",
-    "Python.solution.executor": "Run",
-    "Python.solution1 (1).executor": "Run",
-    "Python.solution1.executor": "Run",
-    "Python.solution2.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/merij/PycharmProjects/2024-advent-of-code/day03",
-    "settings.editor.selected.configurable": "preferences.intentionPowerPack"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.helloWorld.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sol1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sol2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.solution (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.solution (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.solution.executor&quot;: &quot;Run&quot;,
+    &quot;Python.solution1 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.solution1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.solution2.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/merij/PycharmProjects/2024-advent-of-code/day03&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.intentionPowerPack&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\merij\PycharmProjects\2024-advent-of-code\day03" />
@@ -283,7 +283,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733534358513</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="day 06 s01 completed!">
+      <option name="closed" value="true" />
+      <created>1733589556481</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733589556481</updated>
+    </task>
+    <task id="LOCAL-00011" summary="whoops, forgot to uncomment the unique step counter...">
+      <option name="closed" value="true" />
+      <created>1733589603811</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733589603811</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -307,6 +323,8 @@
     <MESSAGE value="day03 sol 01 + 02" />
     <MESSAGE value="WIP day06" />
     <MESSAGE value="Day 6 s01, somehow missing 2 &quot;steps&quot; for the correct answer?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 6 s01, somehow missing 2 &quot;steps&quot; for the correct answer?" />
+    <MESSAGE value="day 06 s01 completed!" />
+    <MESSAGE value="whoops, forgot to uncomment the unique step counter..." />
+    <option name="LAST_COMMIT_MESSAGE" value="whoops, forgot to uncomment the unique step counter..." />
   </component>
 </project>
