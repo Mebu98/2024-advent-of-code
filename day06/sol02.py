@@ -53,27 +53,27 @@ def calc_steps(guard, obstacles, max_x, max_y):
 
         ## if closest obstacle is none then it means we have hit all obstacles and are on our way out of the map
         if closest_obstacle is None:
-            print(f'Guard is moving out of bounds from: {guard.x}, {guard.y}')
+            #print(f'Guard is moving out of bounds from: {guard.x}, {guard.y}')
             if guard.direction == "^":
-                print("Guard moving up out of bounds")
+                #print("Guard moving up out of bounds")
                 for i in range(guard.y, -1, -1):
                     current_steps.append(Step(guard.x, i, guard.direction))
                     guard.y = max_y + 1
 
             elif guard.direction == ">":
-                print("Guard moving right out of bounds")
+                #print("Guard moving right out of bounds")
                 for i in range(guard.x, max_x):
                     current_steps.append(Step(i, guard.y, guard.direction))
                     guard.x = max_x + 1
 
             elif guard.direction == "v":
-                print("Guard moving down out of bounds")
+                #print("Guard moving down out of bounds")
                 for i in range(guard.y, max_y):
                     current_steps.append(Step(guard.x, i, guard.direction))
                     guard.y = -1
 
             elif guard.direction == "<":
-                print("Guard moving left out of bounds")
+                #print("Guard moving left out of bounds")
                 for i in range(guard.x, -1, -1):
                     current_steps.append(Step(i, guard.y, guard.direction))
                     guard.x = -1
@@ -81,12 +81,12 @@ def calc_steps(guard, obstacles, max_x, max_y):
         ## Else we're walking to an obstacle on the X axis
         elif closest_obstacle.x is guard.x:
             if closest_obstacle.y < guard.y:
-                print("Guard moving up")
+                #print("Guard moving up")
                 for i in range(guard.y, closest_obstacle.y + 1, -1):
                     current_steps.append(Step(guard.x, i, guard.direction))
                 guard = Guard(closest_obstacle.x, closest_obstacle.y + 1, ">")
             else:
-                print("Guard moving down")
+                #print("Guard moving down")
                 for i in range(guard.y, closest_obstacle.y - 1):
                     current_steps.append(Step(guard.x, i, guard.direction))
                 guard = Guard(closest_obstacle.x, closest_obstacle.y - 1, "<")
@@ -94,19 +94,27 @@ def calc_steps(guard, obstacles, max_x, max_y):
         ## Or on the Y axis
         else:
             if closest_obstacle.x < guard.x:
-                print("Guard moving left")
+                #print("Guard moving left")
                 for i in range(guard.x, closest_obstacle.x + 1, -1):
                     current_steps.append(Step(i, guard.y, guard.direction))
                 guard = Guard(closest_obstacle.x + 1, closest_obstacle.y, "^")
             else:
-                print("Guard moving right")
+                #print("Guard moving right")
                 for i in range(guard.x, closest_obstacle.x - 1):
                     current_steps.append(Step(i, guard.y, guard.direction))
                 guard = Guard(closest_obstacle.x - 1, closest_obstacle.y, "v")
 
 
-        for step in current_steps:
-            steps.append(step)
+        for current_step in current_steps:
+            for step in steps:
+                if (current_step.x == step.x
+                    and current_step.y == step.y
+                    and current_step.direction == step.direction
+                ):
+                    print("Guard is looping")
+                    return -1 # -1 means calc steps "failed", thus the guard is looping
+
+            steps.append(current_step)
     return steps
 
 def find_closest_obstacle(guard, obstacles):
@@ -134,11 +142,34 @@ def find_closest_obstacle(guard, obstacles):
 
     return closest_obstacle
 
-def d06s01start():
+def print_grid_with_path(grid, obstacles, unique_steps):
+
+    # Print grid with path taken :)
+    grid_string = ""
+
+    for y in range (0, len(grid)):
+        for x in range(0, len(grid[0])):
+            for step in unique_steps:
+                if step.x == x and step.y == y:
+                    grid[y][x] = step.direction
+
+            for obstacle in obstacles:
+                if obstacle.x == x and obstacle.y == y:
+                    grid[y][x] = "#"
+
+    for row in grid:
+        for letter in row:
+            grid_string += letter
+        grid_string += "\n"
+    print(grid_string)
+
+
+def d06s02start():
     grid = read_puzzle()
     guard = find_guard(grid)
     obstacles = find_obstacles(grid)
-    steps = calc_steps(guard, obstacles, len(grid), len(grid[0]))
+
+    steps = calc_steps(guard, obstacles, len(grid[0]), len(grid))
     unique_steps = [steps[0]]
     for step in steps:
         is_in = False
@@ -147,25 +178,19 @@ def d06s01start():
 
         if is_in is False: unique_steps.append(step)
 
-    print(f'Unique coordinates touched: {len(unique_steps)}')
+    possible_obstacles = 0
 
-    # Print grid with path taken :)
-    # grid_string = ""
-    #
-    # for y in range (0, len(grid)):
-    #     for x in range(0, len(grid[0])):
-    #         for step in unique_steps:
-    #             if step.x == x and step.y == y:
-    #                 grid[y][x] = step.direction
-    #
-    #         for obstacle in obstacles:
-    #             if obstacle.x == x and obstacle.y == y:
-    #                 grid[y][x] = "#"
-    #
-    # for row in grid:
-    #     for letter in row:
-    #         grid_string += letter
-    #     grid_string += "\n"
-    # print(grid_string)
+    for i in range(0,len(unique_steps)):
+        step = unique_steps[i]
+        grid[step.y][step.x] = "#" # Place obstacle
+        print(f'Placed obstacle at: {step.x, step.y}, step {i} / {len(unique_steps)}')
+        obstacles = find_obstacles(grid)
+        is_looping = calc_steps(guard, obstacles, len(grid[0]), len(grid))
+        if is_looping == -1:
+            possible_obstacles += 1
+            print("Possible obstacle found")
 
-    return len(unique_steps)
+        grid[step.y][step.x] = "." # Remove obstacle
+
+    return possible_obstacles
+
