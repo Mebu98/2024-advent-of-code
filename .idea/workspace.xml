@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65949f8b-d1a2-4181-899a-17eda1813bad" name="Changes" comment="Refactored a bit and added a &quot;display&quot; of the guard path, although a bit messy...">
-      <change afterPath="$PROJECT_DIR$/day06/sol02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day04/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day04/__main__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day04/puzzle.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day04/sol1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day04/sol2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day06/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/day06/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day06/sol01.py" beforeDir="false" afterPath="$PROJECT_DIR$/day06/sol01.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,27 +48,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
-    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
-    &quot;Python.helloWorld.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sol1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sol2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.solution (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.solution (2).executor&quot;: &quot;Run&quot;,
-    &quot;Python.solution.executor&quot;: &quot;Run&quot;,
-    &quot;Python.solution1 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.solution1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.solution2.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/merij/PycharmProjects/2024-advent-of-code/day03&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.intentionPowerPack&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.__init__.executor": "Run",
+    "Python.__main__ (1).executor": "Run",
+    "Python.__main__.executor": "Run",
+    "Python.helloWorld.executor": "Run",
+    "Python.sol1.executor": "Run",
+    "Python.sol2.executor": "Run",
+    "Python.solution (1).executor": "Run",
+    "Python.solution (2).executor": "Run",
+    "Python.solution.executor": "Run",
+    "Python.solution1 (1).executor": "Run",
+    "Python.solution1.executor": "Run",
+    "Python.solution2.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/merij/PycharmProjects/2024-advent-of-code/day03",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\merij\PycharmProjects\2024-advent-of-code\day03" />
@@ -75,8 +79,8 @@
       <recent name="C:\Users\merij\PycharmProjects\2024-advent-of-code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.__main__">
-    <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.__main__ (1)">
+    <configuration name="__main__ (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="2024-advent-of-code" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,11 +89,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day06" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day04" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\merij\PycharmProjects\2024-advent-of-code\day06\__main__.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day04/__main__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,28 +146,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="solution1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="2024-advent-of-code" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day02" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day02/solution1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="solution2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="2024-advent-of-code" />
       <option name="ENV_FILES" value="" />
@@ -186,20 +168,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.__main__ (1)" />
+      <item itemvalue="Python.sol1" />
+      <item itemvalue="Python.sol2" />
+      <item itemvalue="Python.solution2" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.__main__" />
+        <item itemvalue="Python.__main__ (1)" />
         <item itemvalue="Python.sol2" />
         <item itemvalue="Python.sol1" />
         <item itemvalue="Python.solution2" />
-        <item itemvalue="Python.solution1 (1)" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-fb887030ada0-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.21565.199" />
+        <option value="bundled-python-sdk-1b1018131e27-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.22562.180" />
       </set>
     </attachedChunks>
   </component>
